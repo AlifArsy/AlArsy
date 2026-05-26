@@ -1,0 +1,198 @@
+:root {
+  color-scheme: dark;
+  color: #fff;
+  background: #08111e;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1f3c6c 0%, #08111e 40%, #02050b 100%);
+}
+
+.app-shell {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  margin: 0 0 16px;
+  color: #7fb8ff;
+}
+
+.hero h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.05;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 44rem;
+  color: #c8d8ff;
+  line-height: 1.8;
+}
+
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.photo-upload {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.photo-frame {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(105,160,255,0.16), rgba(15,30,60,0.9));
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.08), 0 24px 80px rgba(0,0,0,0.35);
+  display: grid;
+  place-items: center;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-label {
+  font-size: 0.95rem;
+  color: #dbe8ff;
+}
+
+.photo-note {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #9eb7dc;
+  text-align: center;
+}
+
+.player-card,
+.playlist-section {
+  background: rgba(15, 30, 60, 0.82);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 24px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+}
+
+.track-info {
+  display: grid;
+  gap: 18px;
+}
+
+.track-meta p {
+  margin: 0;
+}
+
+#track-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+#track-artist {
+  color: #a4b8e6;
+}
+
+audio {
+  width: 100%;
+  border-radius: 18px;
+  outline: none;
+}
+
+.playlist-section h2 {
+  margin-top: 0;
+}
+
+.playlist {
+  display: grid;
+  gap: 12px;
+}
+
+.track-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.track-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.1);
+}
+
+.track-details {
+  min-width: 0;
+}
+
+.track-details p {
+  margin: 0;
+}
+
+.track-name {
+  font-weight: 600;
+}
+
+.track-subtitle {
+  color: #a4b8e6;
+  font-size: 0.95rem;
+}
+
+.play-button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #74b9ff, #2f80ed);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.play-button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-image {
+    margin: 0 auto;
+  }
+}
