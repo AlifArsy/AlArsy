@@ -1,7 +1,7 @@
 :root {
   color-scheme: dark;
-  color: #fff;
-  background: #08111e;
+  color: #ececec;
+  background: #121212;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -12,70 +12,64 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #1f3c6c 0%, #08111e 40%, #02050b 100%);
+  background: radial-gradient(circle at top, #222222 0%, #121212 60%, #050505 100%);
 }
 
 .app-shell {
-  max-width: 1000px;
+  max-width: 650px; /* Diperkecil dari 1000px agar tampilan lebih fokus dan estetik di layar laptop/HP */
   margin: 0 auto;
-  padding: 32px 24px 48px;
+  padding: 40px 24px 60px;
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: 1.4fr 0.8fr;
-  gap: 32px;
+  display: flex;
+  flex-direction: column; /* Mengubah susunan teks menjadi di atas foto agar seimbang */
   align-items: center;
-  margin-bottom: 32px;
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.24em;
-  margin: 0 0 16px;
-  color: #7fb8ff;
+  text-align: center;
+  gap: 24px;
+  margin-bottom: 40px;
 }
 
 .hero h1 {
-  margin: 0 0 16px;
-  font-size: clamp(2.4rem, 4vw, 4rem);
-  line-height: 1.05;
+  margin: 0 0 8px;
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
 }
 
 .hero p {
   margin: 0;
-  max-width: 44rem;
-  color: #c8d8ff;
-  line-height: 1.8;
+  color: #1ed760; /* Mengubah teks "Single Song" menjadi warna hijau aksen yang menyala */
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .hero-image {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 16px;
 }
 
 .photo-upload {
   display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
   cursor: pointer;
-  text-decoration: none;
-  color: inherit;
 }
 
 .photo-frame {
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   overflow: hidden;
-  background: linear-gradient(145deg, rgba(105,160,255,0.16), rgba(15,30,60,0.9));
-  box-shadow: inset 0 0 20px rgba(255,255,255,0.08), 0 24px 80px rgba(0,0,0,0.35);
-  display: grid;
-  place-items: center;
+  border: 4px solid #1ed760; /* Memberikan garis tepi hijau neon tipis khas Spotify */
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.photo-frame:hover {
+  transform: scale(1.04); /* Efek membesar sedikit saat kursor ditaruh di atas foto */
 }
 
 .photo-frame img {
@@ -84,31 +78,19 @@ body {
   object-fit: cover;
 }
 
-.photo-label {
-  font-size: 0.95rem;
-  color: #dbe8ff;
-}
-
-.photo-note {
-  margin: 0;
-  font-size: 0.82rem;
-  color: #9eb7dc;
-  text-align: center;
-}
-
-.player-card,
-.playlist-section {
-  background: rgba(15, 30, 60, 0.82);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 24px;
-  padding: 24px;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+.player-card {
+  background: #181818;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  margin-bottom: 32px;
+  border: 1px solid rgba(255,255,255,0.03);
 }
 
 .track-info {
   display: grid;
-  gap: 18px;
+  gap: 20px;
+  text-align: center; /* Membuat judul lagu berada di tengah */
 }
 
 .track-meta p {
@@ -116,43 +98,67 @@ body {
 }
 
 #track-title {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
 }
 
 #track-artist {
-  color: #a4b8e6;
+  color: #b3b3b3;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
+/* MEMPERCANTIK AUDIO PLAYER BAWAAN BROWSER */
 audio {
   width: 100%;
-  border-radius: 18px;
+  height: 44px;
+  border-radius: 30px;
   outline: none;
+  background: #282828;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* PLAYLIST SECTION */
+.playlist-section {
+  background: transparent; /* Menghilangkan background kotak ganda agar lebih clean */
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
 
 .playlist-section h2 {
-  margin-top: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 10px;
 }
 
 .playlist {
   display: grid;
-  gap: 12px;
+  gap: 8px; /* Jarak antar list lagu lebih rapat dan rapi */
 }
 
+/* MEMBUAT LIST LAGU JAUH LEBIH PROFESIONAL */
 .track-card {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 16px;
   align-items: center;
-  padding: 14px 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.05);
-  transition: transform 0.2s ease, background 0.2s ease;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.02);
+  transition: all 0.2s ease;
 }
 
 .track-card:hover {
-  transform: translateY(-2px);
-  background: rgba(255,255,255,0.1);
+  transform: translateX(4px); /* Efek bergeser ke kanan sedikit saat disorot, bukan naik ke atas */
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.05);
 }
 
 .track-details {
@@ -164,35 +170,45 @@ audio {
 }
 
 .track-name {
+  font-size: 1.05rem;
   font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
 }
 
 .track-subtitle {
-  color: #a4b8e6;
-  font-size: 0.95rem;
+  color: #b3b3b3;
+  font-size: 0.88rem;
 }
 
+/* TOMBOL PUTAR MINI */
 .play-button {
-  padding: 10px 16px;
+  padding: 8px 18px;
   border: none;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #74b9ff, #2f80ed);
-  color: white;
-  font-weight: 700;
+  border-radius: 20px;
+  background: #282828; /* Warna tombol awal dibuat gelap solid */
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.track-card:hover .play-button {
+  background: #1ed760; /* Tombol baru berubah menjadi hijau menyala SAAT baris lagunya disorot */
+  color: #000000;
+  border-color: #1ed760;
+  box-shadow: 0 4px 12px rgba(30, 215, 96, 0.3);
 }
 
 .play-button:active {
-  transform: scale(0.98);
+  transform: scale(0.95);
 }
 
+/* RESPONSIVE LAYOUT UNTUK LAYAR KECIL / HP */
 @media (max-width: 760px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-image {
-    margin: 0 auto;
+  .app-shell {
+    padding: 20px 16px;
   }
 }
