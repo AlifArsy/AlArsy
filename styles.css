@@ -16,14 +16,14 @@ body {
 }
 
 .app-shell {
-  max-width: 650px; /* Diperkecil dari 1000px agar tampilan lebih fokus dan estetik di layar laptop/HP */
+  max-width: 650px;
   margin: 0 auto;
   padding: 40px 24px 60px;
 }
 
 .hero {
   display: flex;
-  flex-direction: column; /* Mengubah susunan teks menjadi di atas foto agar seimbang */
+  flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 24px;
@@ -40,7 +40,7 @@ body {
 
 .hero p {
   margin: 0;
-  color: #1ed760; /* Mengubah teks "Single Song" menjadi warna hijau aksen yang menyala */
+  color: #1ed760;
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: 0.05em;
@@ -63,13 +63,13 @@ body {
   height: 180px;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid #1ed760; /* Memberikan garis tepi hijau neon tipis khas Spotify */
+  border: 4px solid #1ed760;
   box-shadow: 0 20px 50px rgba(0,0,0,0.5);
   transition: transform 0.3s ease;
 }
 
 .photo-frame:hover {
-  transform: scale(1.04); /* Efek membesar sedikit saat kursor ditaruh di atas foto */
+  transform: scale(1.04);
 }
 
 .photo-frame img {
@@ -90,7 +90,7 @@ body {
 .track-info {
   display: grid;
   gap: 20px;
-  text-align: center; /* Membuat judul lagu berada di tengah */
+  text-align: center;
 }
 
 .track-meta p {
@@ -110,7 +110,6 @@ body {
   font-weight: 500;
 }
 
-/* MEMPERCANTIK AUDIO PLAYER BAWAAN BROWSER */
 audio {
   width: 100%;
   height: 44px;
@@ -120,9 +119,8 @@ audio {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* PLAYLIST SECTION */
 .playlist-section {
-  background: transparent; /* Menghilangkan background kotak ganda agar lebih clean */
+  background: transparent;
   border: none;
   box-shadow: none;
   padding: 0;
@@ -139,10 +137,9 @@ audio {
 
 .playlist {
   display: grid;
-  gap: 8px; /* Jarak antar list lagu lebih rapat dan rapi */
+  gap: 8px;
 }
 
-/* MEMBUAT LIST LAGU JAUH LEBIH PROFESIONAL */
 .track-card {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -156,7 +153,7 @@ audio {
 }
 
 .track-card:hover {
-  transform: translateX(4px); /* Efek bergeser ke kanan sedikit saat disorot, bukan naik ke atas */
+  transform: translateX(4px);
   background: rgba(255,255,255,0.07);
   border-color: rgba(255,255,255,0.05);
 }
@@ -181,12 +178,11 @@ audio {
   font-size: 0.88rem;
 }
 
-/* TOMBOL PUTAR MINI */
 .play-button {
   padding: 8px 18px;
   border: none;
   border-radius: 20px;
-  background: #282828; /* Warna tombol awal dibuat gelap solid */
+  background: #282828;
   color: #ffffff;
   font-size: 0.85rem;
   font-weight: 600;
@@ -196,7 +192,7 @@ audio {
 }
 
 .track-card:hover .play-button {
-  background: #1ed760; /* Tombol baru berubah menjadi hijau menyala SAAT baris lagunya disorot */
+  background: #1ed760;
   color: #000000;
   border-color: #1ed760;
   box-shadow: 0 4px 12px rgba(30, 215, 96, 0.3);
@@ -206,7 +202,71 @@ audio {
   transform: scale(0.95);
 }
 
-/* RESPONSIVE LAYOUT UNTUK LAYAR KECIL / HP */
+/* DESAIN TOMBOL SOSMED PROFESIONAL KE SAMPING */
+.social-section {
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.social-bar {
+  display: flex;
+  justify-content: space-between; /* Membuat tombol tersebar rata menyamping */
+  gap: 12px;
+}
+
+.social-btn {
+  flex: 1; /* Membuat ukuran ketiga tombol sama rata lebarnya */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Jarak antara ikon logo dan teks tulisan */
+  padding: 14px 16px;
+  border-radius: 14px; /* Bentuk tombol modern kotak membulat lembut */
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-btn i {
+  font-size: 1.2rem; /* Ukuran logo sosmed dibuat sedikit lebih besar */
+}
+
+/* Pewarnaan Tombol Premium */
+.instagram {
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.telegram {
+  background: #0088cc;
+}
+
+.whatsapp {
+  background: #25d366;
+}
+
+/* Efek Interaktif Tombol */
+.social-btn:hover {
+  transform: translateY(-3px); /* Efek melayang naik saat kursor ditaruh di atas tombol */
+  filter: brightness(1.15); /* Tombol sedikit bersinar menyala */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.social-btn:active {
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE LAYOUT UNTUK LAYAR HP */
+@media (max-width: 500px) {
+  .social-bar {
+    flex-direction: column; /* Otomatis berubah susun ke bawah jika layar HP terlalu sempit agar tidak berantakan */
+    gap: 10px;
+  }
+}
+
 @media (max-width: 760px) {
   .app-shell {
     padding: 20px 16px;
